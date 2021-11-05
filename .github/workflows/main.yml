@@ -23,7 +23,11 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
         with:
           vs-version: '[16,16.5)'
-        
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.2
+     
+      - name: Restore NuGet Packages
+        run: nuget restore IAddOneSecondForElder/IAddOneSecondForElder.sl
       
       - name: Run a one-line script
         run: msbuild IAddOneSecondForElder/IAddOneSecondForElder.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
