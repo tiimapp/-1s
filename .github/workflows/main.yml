@@ -25,7 +25,7 @@ jobs:
       
      
       - name: Restore NuGet Packages
-        run: nuget restore IAddOneSecondForElder/IAddOneSecondForElder.sl
+        run: nuget restore IAddOneSecondForElder/IAddOneSecondForElder.sln
       
       - name: Run a one-line script
         run: msbuild IAddOneSecondForElder/IAddOneSecondForElder.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
